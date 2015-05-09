@@ -1,0 +1,11 @@
+{
+  "name": "Hinges",
+  "version": "1.0.0",
+  "description": "Altenative DRM/Game Launcher to Steam",
+  "main": "index.jtml",
+  "window": {
+     "toolbar": false,
+      "width": 800,
+      "height": 600
+  }
+}
