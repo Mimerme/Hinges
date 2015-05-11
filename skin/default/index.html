@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script src="libs/jquery.js"></script>
+      <!-- Site Properities -->
+      <title>Hinges Client</title>
+      <link rel="stylesheet" type="text/css" href="libs/semantic/dist/semantic.css">
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+      <!-- Used with Tab History !-->
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+      <script src="libs/semantic/dist/semantic.js"></script>
+   </head>
+   <body>
+      <div class="ui menu" style="-webkit-app-region: drag">
+        <div class="left menu floated">
+         <a class="item">
+           Hinges Client V.0.2 (alpha)
+         </a>
+       </div>
+
+         <div class="right menu floated">
+            <a class="active item" id="close" style="-webkit-app-region: no-drag">
+            X
+            </a>
+         </div>
+      </div>
+      <div class="ui left vertical thin inverted labeled icon sidebar menu">
+         <a class="item">
+         <i class="home icon"></i>
+         Hinges
+         </a>
+         <a class="item">
+         <i class="game layout icon"></i>
+         Library
+         </a>
+         <a class="item">
+         <i class="server icon"></i>
+         Mods
+         </a>
+         <a class="item">
+         <i class="heart icon"></i>
+         Community
+         </a>
+         <a class="item">
+         <i class="dashboard icon"></i>
+         Customize
+         </a>
+         <a class="item">
+         <i class="chat icon"></i>
+         Discussions
+         </a>
+         <a class="item">
+         <i class="shop icon"></i>
+         Steam Store
+         </a>
+         <a class="item">
+         <i class="shop icon"></i>
+         Desura Store
+         </a>
+         <a class="item">
+         <i class="code icon"></i>
+         Developer
+         </a>
+         <a class="item">
+         <i class="settings icon"></i>
+         About
+         </a>
+      </div>
+      <div class="ui secondary animated button" id="menu">
+      <div class="visible content">
+         <i class="align justify icon"></i>
+      </div>
+      <div class="hidden content">
+         <i class="indent icon"></i>
+         <div>
+            <script>
+               $(document).ready(function ready(){
+                 $( "#menu" ).click(function() {
+                 $('.ui.sidebar')
+                 .sidebar('setting', 'push')
+                 .sidebar('toggle')
+                 ;
+               });
+               });
+            </script>
+            <script src="script.js"></script>
+         </div>
+      </div>
+   </body>
+</html>
