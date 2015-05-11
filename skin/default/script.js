@@ -15,6 +15,7 @@ gui.App.registerGlobalHotKey(debug);
 $(document).ready(function(){
   console.log("jquery sucessfully initialized");
   console.log("nodeJS sucessfully initialized");
+  init();
 });
 
 $("#close").click(function(){

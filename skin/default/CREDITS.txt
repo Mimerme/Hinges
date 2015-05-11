@@ -1,0 +1,10 @@
+PIVOT SKIN CREDITS
+------------------
+PIVOT SKIN USES THE FOLLOWING LIBARIES
+---------------------------------------
+SEMANTIC-UI 
+WEBSITE: http://semantic-ui.com/
+---------------------------------------
+A COLLECTION OF PAGE TRANSITIONS
+WEBSITE: http://tympanus.net/codrops/2013/05/07/a-collection-of-page-transitions/
+---------------------------------------
