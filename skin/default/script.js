@@ -15,14 +15,23 @@ gui.App.registerGlobalHotKey(debug);
 $(document).ready(function(){
   console.log("jquery sucessfully initialized");
   console.log("nodeJS sucessfully initialized");
-  init();
 });
 
 $("#close").click(function(){
   console.log("Closing the active window");
-  window.close(false);
+  gui.Window.get().close(false);
+});
+
+$("#minimize").click(function(){
+  console.log("Closing the active window");
+  gui.Window.get().minimize();
 });
 
 debug.on('active', function(){
-  window.showDevTools();
+  if(gui.Window.get().isDevToolsOpen()){
+      gui.Window.get().closeDevTools();
+    }
+    else{
+      gui.Window.get().showDevTools();
+    }
 });

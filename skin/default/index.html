@@ -4,8 +4,8 @@
       <script src="libs/jquery.js"></script>
       <!-- Site Properities -->
       <title>Hinges Client</title>
-      <link rel="stylesheet" type="text/css" href="libs/semantic/dist/semantic.css">
-      <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="stylesheet" type="text/css" href="libs/semantic/dist/semantic.css"/>
+      <link rel="stylesheet" type="text/css" href="style.css"/>
 
       <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
       <!-- Used with Tab History !-->
@@ -22,54 +22,58 @@
        </div>
 
          <div class="right menu floated">
+           <a class="active item" id="minimize" style="-webkit-app-region: no-drag">
+           -
+           </a>
             <a class="active item" id="close" style="-webkit-app-region: no-drag">
             X
             </a>
          </div>
+         <h1>[PAGE_TITLE]</h1>
       </div>
       <div class="ui left vertical thin inverted labeled icon sidebar menu">
-         <a class="item">
+         <a class="item" onclick="setTitle('Home');">
          <i class="home icon"></i>
          Hinges
          </a>
-         <a class="item">
+         <a class="item" onclick="setPage('Games');">
          <i class="game layout icon"></i>
          Library
          </a>
-         <a class="item">
+         <a class="item" onclick="setTitle('Mods');">
          <i class="server icon"></i>
          Mods
          </a>
-         <a class="item">
+         <a class="item" onclick="setTitle('Community');">
          <i class="heart icon"></i>
          Community
          </a>
-         <a class="item">
+         <a class="item" onclick="setTitle('Customizations');">
          <i class="dashboard icon"></i>
          Customize
          </a>
-         <a class="item">
+         <a class="item" onclick="setTitle('Discussions');">
          <i class="chat icon"></i>
          Discussions
          </a>
-         <a class="item">
+         <a class="item" onclick="setTitle('Steam Store');">
          <i class="shop icon"></i>
          Steam Store
          </a>
-         <a class="item">
+         <a class="item" onclick="setTitle('Desura Store');">
          <i class="shop icon"></i>
          Desura Store
          </a>
-         <a class="item">
+         <a class="item" onclick="setTitle('Developer');">
          <i class="code icon"></i>
          Developer
          </a>
-         <a class="item">
+         <a class="item" onclick="setTitle('About');">
          <i class="settings icon"></i>
          About
          </a>
       </div>
-          <iframe src="http://google.com" style="width: 100%; height: 90%; position: fixed;">
+          <iframe src="http://google.com" style="width: 100%; height: 93%; position: fixed;">
             <p>Your browser does not support iframes.</p>
           </iframe>
       <div class="ui secondary animated button" id="menu" style="position: fixed;">
@@ -82,18 +86,30 @@
       </div>
     </div>
       <script>
-
          $(document).ready(function ready(){
-           $('.ui.sidebar')
-           .sidebar('setting', 'push')
-           .sidebar('toggle')
            $( "#menu" ).click(function() {
+             toggleSideBar();
+         });
+         });
+
+         function toggleSideBar(){
            $('.ui.sidebar')
            .sidebar('setting', 'push')
            .sidebar('toggle')
            ;
-         });
-         });
+         }
+
+
+         function setTitle(titlename){
+           $("h1").text(titlename);
+         }
+
+         function setPage(pagename){
+           setTitle(pagename);
+           $('iframe').attr('src', "pages/" + pagename + "/" + pagename
+           + ".html")
+           toggleSideBar();
+         }
       </script>
       <script src="script.js"></script>
    </body>

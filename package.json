@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "Altenative DRM/Game Launcher to Steam",
   "main": "skin/default/index.html",
+  "node-main": "scripts/main.js",
   "window": {
      "toolbar": false,
      "frame": false,
       "width": 1100,
-      "height": 700
+      "height": 700,
+
+      "min_width": 800,
+      "min_height": 650
   }
 }
