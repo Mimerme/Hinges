@@ -1,23 +1,59 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <script src="../../libs/jquery.js"></script>
-      <!-- Site Properities -->
-      <title>Hinges Client</title>
-      <link rel="stylesheet" type="text/css" href="../../libs/semantic/dist/semantic.css">
+  <head>
+    <script src="../../libs/jquery.js"></script>
+    <script src="game_screen.js"></script>
+    <!-- Site Properities -->
+    <title>Hinges Client</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../../libs/semantic/dist/semantic.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+    <!-- Used with Tab History !-->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script src="../../libs/semantic/dist/semantic.js"></script>
+  </head>
+  <body>
+    <h1 class="center-align">
+      <div class="ui button right add-game">
+        Add Game
+      </div>
+    </h1>
+    <div class="ui cards">
+      <div class="ui card card-padding">
+        <div class="content">
+          <h2 class="center-align">[GAME_NAME]</h2>
+          <div class="ui medium image game">
+            <div class="ui dimmer">
+              <div class="content">
+                <div class="center">
+                  <div class="ui small primary button">Play</div>
+                </div>
+              </div>
+            </div>
+            <img src= "http://nerdreactor.com/wp-content/uploads/2011/06/TF2-better-banner.jpg"/>
+          </div>
+        </div>
+        <div class="extended-content">
+          <p class="extended-text">Last Played : [LAST_PLAY]</p>
+          <p class="extended-text">Played For : [HOURS_PLAYED]</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    $(document).ready(function(){
+      console.log("Loading Games page");
+    });
 
-      <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
-      <!-- Used with Tab History !-->
-      <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-      <script src="../../libs/semantic/dist/semantic.js"></script>
-   </head>
-   <body>
-     <h1>This is le GAMEZ page</h1>
-   </body>
-   <script>
-   $(document).ready(function(){
-     console.log("Loading Games page");
-   });
-   </script>
+    $('.game').dimmer({
+      on: 'hover'
+    });
 
+    $('.add-game').click(function(){
+      newWindow("pages/Games/popouts/addgame.html", 500, 400, "Add Game");
+    });
+
+    addGame("yas", "yas.exe");
+    saveGames();
+  </script>
 </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+   <head>
+     <script src="../../scripts/ConfigUtil.js"></script>
+      <script src="libs/jquery.js"></script>
+      <!-- Site Properities -->
+      <title>Hinges Client</title>
+      <link rel="stylesheet" type="text/css" href="libs/semantic/dist/semantic.css"/>
+      <link rel="stylesheet" type="text/css" href="style.css"/>
+
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+      <!-- Used with Tab History !-->
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+      <script src="libs/semantic/dist/semantic.js"></script>
+   </head>
+   <body>
+      <div class="ui menu" style="-webkit-app-region: drag">
+        <div class="left menu floated"></div>
+
+         <div class="right menu floated">
+           <a class="active item" id="minimize" style="-webkit-app-region: no-drag">
+           -
+           </a>
+            <a class="active item" id="close" style="-webkit-app-region: no-drag">
+            X
+            </a>
+         </div>
+      </div>
+          <iframe src="http://google.com" style="width: 100%; height: 93%; position: fixed;" frameBorder="0">
+            <p>Your browser does not support iframes.</p>
+          </iframe>
+
+  <script>
+  $("iframe").attr("src", getQueryVariable("id"));
+  </script>
+
+  <script src="script.js"></script>
+   </body>
+
+</html>

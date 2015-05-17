@@ -1,0 +1,41 @@
+.extended-text{
+  font-size: 15px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+img{
+  max-width:100%;
+  max-height:100%;
+}
+
+.center-align{
+  text-align: center;
+}
+
+h2{
+  font-size: 20px;
+}
+
+.card-padding{
+  margin-left: 2% !important;
+  margin-right: 2% !important;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.right {
+    position: fixed;
+    right: 0px;
+    width: 300px;
+    background-color: #b0e0e6;
+}
+
+.add-game{
+  margin-top: 5px !important;
+  margin-right: 10px !important;
+}

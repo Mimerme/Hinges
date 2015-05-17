@@ -1,6 +1,6 @@
 var gui = require('nw.gui');
 
-var window = gui.Window.get();
+var win = gui.Window.get();
 
 var developerTools = {
   key : "Ctrl+Shift+A",
@@ -9,8 +9,17 @@ var developerTools = {
   }
 };
 
+var reloadPage = {
+  key : "Ctrl+Shift+R",
+  failed : function(msg) {
+    console.log(msg);
+  }
+};
+
 var debug = new gui.Shortcut(developerTools);
+var reload = new gui.Shortcut(reloadPage);
 gui.App.registerGlobalHotKey(debug);
+gui.App.registerGlobalHotKey(reload);
 
 $(document).ready(function(){
   console.log("jquery sucessfully initialized");
@@ -34,4 +43,8 @@ debug.on('active', function(){
     else{
       gui.Window.get().showDevTools();
     }
+});
+
+reload.on('active', function(){
+  win.reload();
 });
