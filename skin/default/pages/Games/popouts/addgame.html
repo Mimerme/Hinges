@@ -15,7 +15,7 @@
     <h1 class="pad-left">Add a game</h1>
 
     <div class="ui input pad-left">
-      <input type="text" placeholder="Exectuable location...">
+      <input type="text" id="locationInput" placeholder="Exectuable location...">
     </div>
 
     <h class="pad-left">OR</h>
@@ -26,16 +26,25 @@
 
     <h1 class="pad-left">Game Name</h1>
     <div class="ui input pad-left">
-      <input type="text" placeholder="Game Name">
+      <input type="text" placeholder="Game Name" id="gameNameInput">
     </div>
 
   </body>
 
   <footer>
-  <div class="ui button pad-left pad-top">
+  <div class="ui button pad-left pad-top" id="add">
     Add
   </div>
 </footer>
   <script>
+    $('#add').click(function(){
+      console.log('attempting to add ' + $('#gameNameInput').val() + " @ " + $('#locationInput').val());
+      addGame($('#gameNameInput').val(), $('#locationInput').val());
+      saveGames();
+      //TODO Actual error handling
+      global.popupMessage($('#gameNameInput').val() + " was added succesfully");
+      require('nw.gui').Window.get().close(false);
+    });
   </script>
+  <script src="../game_screen.js"></script>
 </html>

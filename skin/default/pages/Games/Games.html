@@ -2,7 +2,6 @@
 <html>
   <head>
     <script src="../../libs/jquery.js"></script>
-    <script src="game_screen.js"></script>
     <!-- Site Properities -->
     <title>Hinges Client</title>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -41,6 +40,7 @@
     </div>
   </body>
   <script>
+    var os = require('os');
     $(document).ready(function(){
       console.log("Loading Games page");
     });
@@ -50,10 +50,7 @@
     });
 
     $('.add-game').click(function(){
-      newWindow("pages/Games/popouts/addgame.html", 500, 400, "Add Game");
+      global.newWindow("pages/Games/popouts/addgame.html", 500, 400, "Add Game", null);
     });
-
-    addGame("yas", "yas.exe");
-    saveGames();
   </script>
 </html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../../libs/jquery.js"></script>
+    <!-- Site Properities -->
+    <title>Hinges Client</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../../libs/semantic/dist/semantic.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+    <!-- Used with Tab History !-->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script src="../../libs/semantic/dist/semantic.js"></script>
+  </head>
+  <body>
+    <center>
+      <p class="pad-left">[Text goes here]</p>
+    </center>
+  </body>
+
+  <footer>
+    <center>
+      <div class="ui button pad-left pad-top" onclick="klose()">
+        okay
+      </div>
+    </center>
+</footer>
+  <script>
+
+  function klose(){
+    console.log('yas');
+    require('nw.gui').Window.get().close(false);
+  }
+  </script>
+</html>

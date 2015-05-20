@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Altenative DRM/Game Launcher to Steam",
   "main": "skin/default/index.html",
-  "node-main": "scripts/main.js",
+  "node-remote": "<local>",
   "window": {
      "toolbar": false,
      "frame": false,
@@ -12,5 +12,8 @@
 
       "min_width": 800,
       "min_height": 650
+  },
+  "webkit": {
+    "plugin": true
   }
 }

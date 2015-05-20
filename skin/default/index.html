@@ -86,7 +86,9 @@
       </div>
     </div>
       <script>
-        setPage('Games', false);
+        var utils = require('../../scripts/utils.js');
+
+        setPageNoToggle('Games');
 
          $(document).ready(function ready(){
            $( "#menu" ).click(function() {
@@ -113,12 +115,10 @@
            toggleSideBar();
          }
 
-         function setPage(pagename, toggle){
+         function setPageNoToggle(pagename){
            setTitle(pagename);
            $('iframe').attr('src', "pages/" + pagename + "/" + pagename
            + ".html")
-           if(toggle)
-            toggleSideBar();
          }
       </script>
       <script src="script.js"></script>
