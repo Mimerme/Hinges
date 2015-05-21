@@ -7,29 +7,39 @@ var gameList = {
 
 //addGame() should be fired every time a game is added
 //to the hastable
-function addGame(name, path){
-  gameList[name] = path;
+var addGame = function addGame(name, path){
+  global.loadGames();
+  console.log(global.gameList);
+  global.gameList[name] = path;
+  console.log(global.gameList);
   saveGames();
 }
 
-function removeGame(name, path){
-  gameList[name] = null;
+var removeGames = function removeGame(name, path){
+  global.gameList[name] = null;
   saveGames();
 }
 
-function loadGames(){
+var loadGames = function loadGames(){
   console.log("Loaded the following hastable");
   console.log("------------------------------");
-  gameList = global.readConfig('configs/default/games.cfg');
-  console.log(gameList);
+  global.gameList = global.readConfig('configs/default/games.cfg');
+  console.log(global.gameList);
+  console.log("______________________________");
 }
 
-//should be fired whenever gameList is modified aka whenever
+//should be fired whenever global.gameList is modified aka whenever
 //add/removeGame() is called
-function saveGames(){
-  global.writeConfig('configs/default/games.cfg', gameList);
+var saveGames = function saveGames(){
+  global.writeConfig('configs/default/games.cfg', global.gameList);
 }
 
 function newWindow(src, w, h, id){
   global.newWindow(src, w, h, id);
 }
+
+global.gameList = global.gameList;
+global.addGame = addGame;
+global.removeGames = removeGames;
+global.loadGames = loadGames;
+global.saveGames = saveGames;

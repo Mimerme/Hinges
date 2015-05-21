@@ -82,8 +82,10 @@ var runApp =function(path){
 var popupMessage = function(tvar){
   newWindow("pages/Misc/message_box_okay.html" ,600, 200, "New PopupMessasge",
   function(frame){
-     frame.contentDocument.body.innerHTML =
-     frame.contentDocument.body.innerHTML.replace('[Text goes here]', tvar);
+    if(frame != null){
+        frame.contentDocument.body.innerHTML =
+        frame.contentDocument.body.innerHTML.replace('[Text goes here]', tvar);
+      }
     });
 }
 

@@ -39,12 +39,10 @@
   <script>
     $('#add').click(function(){
       console.log('attempting to add ' + $('#gameNameInput').val() + " @ " + $('#locationInput').val());
-      addGame($('#gameNameInput').val(), $('#locationInput').val());
-      saveGames();
+      global.addGame($('#gameNameInput').val(), $('#locationInput').val());
       //TODO Actual error handling
       global.popupMessage($('#gameNameInput').val() + " was added succesfully");
-      require('nw.gui').Window.get().close(false);
+      //require('nw.gui').Window.get().close(false);
     });
   </script>
-  <script src="../game_screen.js"></script>
 </html>
