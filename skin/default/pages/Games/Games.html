@@ -25,11 +25,11 @@
             <div class="ui dimmer">
               <div class="content">
                 <div class="center">
-                  <div class="ui small primary button">Play</div>
+                  <div class="ui small primary button" class="playGame" onclick="runGame('C:/Windows/System32/calc.exe')">Play</div>
                 </div>
               </div>
             </div>
-            <img src= "http://nerdreactor.com/wp-content/uploads/2011/06/TF2-better-banner.jpg"/>
+            <img src= "http://sensesofcinema.com/wp-content/themes/valenti/library/images/thumbnail-360x240.png"/>
           </div>
         </div>
         <div class="extended-content">
@@ -41,11 +41,52 @@
   </body>
   <script src="game_screen.js"></script>
   <script>
+    //semantic-UI requires that all content be pre-loaded
+    //to allow dimmable objects
+
+    global.loadGames();
+    var list  = global.gameList;
+
+    for(var title in global.gameList){
+      console.log("title");
+      if (!list.hasOwnProperty(title)) {
+        continue;
+      }
+      appendGame(title, list[title]);
+      console.log(title);
+      console.log(list[title]);
+    }
+
     var os = require('os');
     $(document).ready(function(){
-      console.log("Loading Games page");
-      loadGames();
+      console.log("Finished loading Games page");
     });
+
+    function appendGame(name, path){
+      $('.cards').append('<div class="ui card card-padding">\
+        <div class="content">\
+          <h2 class="center-align">' + name + '</h2>\
+          <div class="ui medium image game dimmable">\
+            <div class="ui dimmer transition hidden">\
+              <div class="content">\
+                <div class="center">\
+                  <div class="ui small primary button" onclick="runGame(\'' +  path  + '\')">Play</div>\
+                </div>\
+              </div>\
+            </div>\
+            <img src="http://sensesofcinema.com/wp-content/themes/valenti/library/images/thumbnail-360x240.png">\
+          </div>\
+        </div>\
+        <div class="extended-content">\
+          <p class="extended-text">Last Played : [LAST_PLAY]</p>\
+          <p class="extended-text">Played For : [HOURS_PLAYED]</p>\
+        </div>\
+      </div>');
+    }
+
+    function runGame(path){
+      global.runApp(path);
+    }
 
     $('.game').dimmer({
       on: 'hover'
